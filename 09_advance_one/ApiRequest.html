@@ -5,23 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body style="background-color: #212121;">
-    0	UNSENT	Client has been created. open() not called yet.
-1	OPENED	open() has been called.
-2	HEADERS_RECEIVED	send() has been called, and headers and status are available.
-3	LOADING	Downloading; responseText holds partial data.
-4	DONE	The operation is complete.
+<body style="background-color: #17202A; font-family: 'Courier New', Courier, monospace;">
+    <div style="display: flex; flex-direction: column   ; justify-content: center; align-items: center; min-height: 90vh;">
+        <div id="card">
+            <img width="280px" height="280px" style="border-radius: 250px; border: solid 2px #58d68d;" src="" alt="">
+            <span style="display: block; text-align: center; margin-top: 20px; color: aliceblue;">
+                <span>Followers: </span>
+                <span id="follower_count"></span>
+            </span>
+        </div>
+    </div>
 </body>
 <script>
     const requestUrl = 'https://api.github.com/users/hiteshchoudhary'
     const xhr = new XMLHttpRequest();
     xhr.open('GET', requestUrl)
     xhr.onreadystatechange = function(){
-        console.log(xhr.readyState);
         if (xhr.readyState === 4) {
             const data = JSON.parse(this.responseText)
-            console.log(typeof data);
-            console.log(data.followers);
+            document.getElementsByTagName("img")[0].src = data.avatar_url
+            document.getElementsByTagName("title")[0].textContent = data.name
+            document.getElementById("follower_count").textContent = data.followers
         }
     }
     xhr.send();
