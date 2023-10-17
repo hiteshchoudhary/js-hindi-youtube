@@ -14,13 +14,13 @@ switch (month) {
         console.log("January");
         break;
     case "feb":
-        console.log("feb");
+        console.log("February");
         break;
     case "march":
-        console.log("march");
+        console.log("March");
         break;
     case "april":
-        console.log("april");
+        console.log("April");
         break;
 
     default:
