@@ -518,3 +518,58 @@ It's important to note that `NaN` (Not-a-Number) is a special value representing
 
 Remember to use strict equality (`===`) to avoid unexpected type coercion behavior when comparing values in JavaScript.
 
+# String interpolation 
+
+String interpolation is a programming language feature that allows you to embed expressions or variables directly within string literals. This makes it easier to create strings by inserting dynamic values without the need for complex concatenation or formatting.
+
+In JavaScript, prior to ES6, string interpolation was typically done using string concatenation or the `+` operator. For example:
+
+```javascript
+var name = "John";
+var greeting = "Hello, " + name + "!";
+console.log(greeting); // Outputs: Hello, John!
+```
+
+With the introduction of ECMAScript 6 (ES6), template literals were introduced, providing a more convenient way for string interpolation. Template literals are enclosed by backticks (``) instead of single or double quotes:
+
+```javascript
+var name = "John";
+var greeting = `Hello, ${name}!`;
+console.log(greeting); // Outputs: Hello, John!
+```
+
+In this example, `${name}` is the expression that gets evaluated and replaced with the value of the `name` variable within the template literal.
+
+Template literals support multiline strings and can also contain expressions or complex logic:
+
+```javascript
+var a = 5;
+var b = 10;
+var result = `The sum of ${a} and ${b} is ${a + b}.`;
+console.log(result); // Outputs: The sum of 5 and 10 is 15.
+```
+
+Using template literals for string interpolation is a more concise and readable way to build strings with dynamic content in modern JavaScript.
+
+# Since  `===`  returns  `true`  or  `false`, we can return the result of the comparison:
+
+```js
+function isEqual(a, b) {
+  return a === b;
+}
+```
+
+# `Math.random()` function that generates a random decimal number between `0` (inclusive) and `1` (exclusive). Thus `Math.random()` can return a `0` but never return a `1`.
+
+## Generate random number in a range - 
+```js
+Math.floor(Math.random() * (max - min + 1)) + min
+```
+#  `parseInt(string, radix);` 
+
+```js
+const a = parseInt("11", 2);
+
+```
+
+The radix variable says that  `11`  is in the binary system, or base 2. This example converts the string  `11`  to an integer  `3`.
