@@ -1,4 +1,4 @@
-//var c = 300
+//var c = 300 - scope unsafe
 let a = 300
 if (true) {
     let a = 10
@@ -6,8 +6,6 @@ if (true) {
     // console.log("INNER: ", a);
     
 }
-
-
 
 // console.log(a);
 // console.log(b);
@@ -44,7 +42,7 @@ if (true) {
 // ++++++++++++++++++ interesting ++++++++++++++++++
 
 
-console.log(addone(5))
+console.log(addone(5)) // calling before definition
 
 function addone(num){
     return num + 1
@@ -52,7 +50,8 @@ function addone(num){
 
 
 
-addTwo(5)
+addTwo(5) // calling before definition - this will give error
+// Functions as expressions 
 const addTwo = function(num){
     return num + 2
 }
