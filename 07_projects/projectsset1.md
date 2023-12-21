@@ -9,30 +9,43 @@
 
 ```javascript
 console.log("hitesh")
-const buttons = document.querySelectorAll('.button');
-const body = document.querySelector('body');
 
-buttons.forEach(function (button) {
-  console.log(button);
-  button.addEventListener('click', function (e) {
-    console.log(e);
-    console.log(e.target);
-    if (e.target.id === 'grey') {
-      body.style.backgroundColor = e.target.id;
-    }
-    if (e.target.id === 'white') {
-      body.style.backgroundColor = e.target.id;
-    }
-    if (e.target.id === 'blue') {
-      body.style.backgroundColor = e.target.id;
-    }
-    if (e.target.id === 'yellow') {
-      body.style.backgroundColor = e.target.id;
-    }
+const allBtn = document.querySelectorAll('.button')
+
+const theBody = document.querySelector("body")
+
+allBtn.forEach( (btn)=> {
+  console.log(btn);
+  btn.addEventListener("click", (e)=> {
+     console.log(e);
+
+     switch (e.target.id){
+
+      case "grey":
+      theBody.style.backgroundColor = e.target.id;
+      break;
+
+      case "white":
+      theBody.style.backgroundColor = e.target.id;
+      break;
+
+      case "blue":
+      theBody.style.backgroundColor = e.target.id;
+      break;
+
+      case "yellow":
+      theBody.style.backgroundColor = e.target.id;
+      break;
+
+      default:
+      break;
+
+     }
+  })
+})
+
+
     
-  });
-});
-
 
 ```
 
