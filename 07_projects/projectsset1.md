@@ -40,7 +40,7 @@ buttons.forEach(function (button) {
 
 ```javascript
 const form = document.querySelector('form');
-// this usecase will give you empty
+//This usecase will give you an empty
 // const height = parseInt(document.querySelector('#height').value)
 
 form.addEventListener('submit', function (e) {
@@ -48,20 +48,34 @@ form.addEventListener('submit', function (e) {
 
   const height = parseInt(document.querySelector('#height').value);
   const weight = parseInt(document.querySelector('#weight').value);
-  const results = document.querySelector('#results');
+  const res = document.querySelector("#results")
+ // parseInt() method converts the string value into an integer value
 
-  if (height === '' || height < 0 || isNaN(height)) {
-    results.innerHTML = `Please give a valid height ${height}`;
-  } else if (weight === '' || weight < 0 || isNaN(weight)) {
-    results.innerHTML = `Please give a valid weight ${weight}`;
-  } else {
-    const bmi = (weight / ((height * height) / 10000)).toFixed(2);
-    //show the result
-    results.innerHTML = `<span>${bmi}</span>`;
-  }
-});
+ if(height === '' || height === 0 || height<0 || isNaN(height))
+    // use the isNaN() method instead of value === NaN
+ {
+    res.innerHTML = `Please give a valid value of height`;
+ }
+ else if(weight === '' || weight === 0 || weight < 0 || isNaN(weight)){
+    
+    res.innerHTML = `Please give a valid value of weight`;
+ }
+ else {
+     // calculation
+    const bmi = (weight / ((height * height) / 10000)). toFixed(1);
+    
+    //for showing the result
 
-
+    if(bmi < 18.6){
+        res.innerHTML = `<span>${bmi} and you are underweight.</span>`
+    } else if ( bmi >= 18.6 && bmi <= 24.9){
+        res.innerHTML = `<span>${bmi} and your weight is in normal range.</span>`
+    }else{
+        res.innerHTML = `<span>${bmi} and you are overweight.</span>`
+    }
+    
+ }
+})
 ```
 
 ## project 3 solution code
