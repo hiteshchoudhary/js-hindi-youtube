@@ -1,5 +1,5 @@
 # js-hindi-youtube
-A code repo for javascript series at Chai aur code youtube channel
+A code repository for javascript series on Chai aur code youtube channel
 
 ---
 
