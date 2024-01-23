@@ -243,3 +243,42 @@ document.querySelector('#stop').addEventListener('click', stopChangingColor);
 
 
 ```
+
+# Project 7 Solution (Try it yourself first || if you fail then look once || contributed by GitHub/mdimrannazir)
+
+```javascript
+// use indicator width
+const progress = document.querySelector('.progress');
+
+document.addEventListener('scroll', function () {
+  winScroll = document.documentElement.scrollTop;
+  // returnts current scroll position in pixels || window.scrollY does the same
+
+  scrollHeight = document.documentElement.scrollHeight;
+  //scrollHeight: total height of the document || window.scrollHeight does the same
+
+  clientHeight = document.documentElement.clientHeight;
+  //clientHeight: visible height of the document
+
+  height = scrollHeight - clientHeight;
+  //height: the remaining height
+
+  console.log('Current scroll position: ', winScroll);
+  console.log('Total heigh of document: ', scrollHeight);
+  console.log('visible height of document: ', clientHeight);
+  console.log('Remaining height after scrolling', height);
+
+  scrollPosition = window.scrollY;
+  console.log('ScrollY', scrollPosition);
+
+  let x = (winScroll / height) * 100;
+  //x: ratio of current scroll
+
+  console.log('Scroll ratio: ', x);
+
+  progress.style.width = `${x}%`;
+});
+
+
+
+```
