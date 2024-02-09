@@ -3,20 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Event</title>
 </head>
 <body>
-    <h1>Chai aur Javascript</h1>
+    <h1>Events in JS | Chai with JS</h1>
     <button id="start">Start</button>
     <button id="stop">Stop</button>
+    <script>
+        let intervalID;
+
+        function sayName(){
+            console.log("kaushal",Date.now())
+        }
+
+        document.querySelector('#start').addEventListener('click',function(){
+            if(!intervalID){
+                intervalID = setInterval(sayName,1000)
+            }
+        })
+
+        document.querySelector('#stop').addEventListener('click',function(){
+            clearInterval(intervalID);
+            intervalID = null;
+        })
+    </script>
 </body>
-<script>
-    const sayDate = function(str){
-        console.log(str, Date.now());
-    }
-
-    const intervalId = setInterval(sayDate, 1000, "hi")
-
-    clearInterval(intervalId)
-</script>
 </html>
