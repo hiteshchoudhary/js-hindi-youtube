@@ -167,6 +167,7 @@ function newGame() {
     randomNumber = parseInt(Math.random() * 100 + 1);
     prevGuess = [];
     numGuess = 1;
+    displayMassage('');  // massage get disappear  when new game is started
     guessSlot.innerHTML = '';
     remaining.innerHTML = `${11 - numGuess} `;
     userInput.removeAttribute('disabled');
