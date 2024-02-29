@@ -24,6 +24,6 @@ let state;
 
 
 // object
-
+// array
 console.log(typeof undefined); // undefined
 console.log(typeof null); // object
