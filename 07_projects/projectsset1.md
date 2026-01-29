@@ -56,8 +56,25 @@ form.addEventListener('submit', function (e) {
     results.innerHTML = `Please give a valid weight ${weight}`;
   } else {
     const bmi = (weight / ((height * height) / 10000)).toFixed(2);
-    //show the result
-    results.innerHTML = `<span>${bmi}</span>`;
+
+    let category = ""
+
+    if (bmi < 18.5) {
+      category = "Underweight"
+    } 
+    else if (bmi >= 18.5 && bmi <= 24.9) {
+      category = "Normal weight"
+    } 
+    else if (bmi > 24.9) {
+      category = "Overweight"
+    } 
+    else {
+      category = "Obese"
+    }
+    //show result
+    results.innerHTML = `<span>${bmi}</span>
+    <br>
+      <span>Status: <b>${category}</b></span>`;
   }
 });
 
